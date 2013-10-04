@@ -4,7 +4,7 @@
 
 * Built on open source tools (<a href="http://jquery.com">jQuery</a>, <a href="http://leafletjs.com">Leaflet</a>, <a href="https://github.com/mbostock/topojson/wiki">TopoJSON</a>).
 
-* Extensible so you can add layers using Leaflet plugins, <a href="http://esri.github.io/esri-leaflet/">Esri-Leaflet</a>, <a href="http://arthur-e.github.io/Wicket/">Wicket</a>, and <a href="https://github.com/proj4js/proj4js#using">Proj4JS</a>
+* Extensible so you can add layers using <a href="http://leafletjs.com/plugins.html">Leaflet plugins</a>, <a href="http://esri.github.io/esri-leaflet/">Esri-Leaflet</a>, <a href="http://arthur-e.github.io/Wicket/">Wicket</a>, and <a href="https://github.com/proj4js/proj4js#using">Proj4JS</a>
 
 * Static for easy hosting on GitHub Pages
 
