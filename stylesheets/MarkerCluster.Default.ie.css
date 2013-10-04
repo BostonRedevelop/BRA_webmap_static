@@ -1,0 +1,28 @@
+ /* IE 6-8 fallback colors */
+.marker-cluster-small {
+	background-color: rgb(176, 156, 0);
+	background-color: rgb(220, 220, 220);
+	}
+.marker-cluster-small div {
+	background-color: rgb(176, 156, 0);
+	background-color: rgb(220, 220, 220);
+	}
+
+.marker-cluster-medium {
+	background-color: rgb(195, 2, 93);
+	background-color: rgb(220, 220, 220);
+	}
+.marker-cluster-medium div {
+	background-color: rgb(195, 2, 93);
+	background-color: rgb(220, 220, 220);
+	}
+
+.marker-cluster-large {
+	background-color: rgb(240, 98, 50);
+	background-color: rgb(220, 220, 220);
+	}
+.marker-cluster-large div {
+	background-color: rgb(240, 98, 50);
+	background-color: rgb(220, 220, 220);
+}
+

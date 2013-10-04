@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="stylesheets/leaflet.css" />
+    <link rel="stylesheet" href="stylesheets/L.Control.Zoomslider.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="stylesheets/leaflet.ie.css" />
+      <link rel="stylesheet" href="stylesheets/L.Control.Zoomslider.ie.css" />
+    <![endif]-->
+    <style type="text/css">
+html, body, #map{ width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+  </head>
+  <body>
+    <div id="map">
+      <div class="map_overlay_left addressbox" unselectable="on">
+        <fieldset>
+          <legend>Location Search</legend>
+          <input id="address" type="text" placeholder="Address or Parcel ID"/>
+          <img id="makesearch" alt="Search" title="Search" src="images/search_arrow.png"/>
+        </fieldset>
+      </div>
+      <div class="map_overlay_left layerbox" unselectable="on">
+        <fieldset>
+          <legend>View By</legend>
+          <div class="layer development_projects">
+            <img src="images/dev_projects.png" class="layericon development_projects"/>
+            <span class="layerlabel development_projects">Development Projects</span>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="map_overlay_left filterbox" unselectable="on">
+        <fieldset>
+          <legend>Filter By</legend>
+          <div class="filterselect-style">
+            <select class="filterselect">
+              <option value="All">All Neighborhoods</option>
+              <option value="Allston">Allston</option>
+              <option value="Back Bay">Back Bay</option>
+              <option value="Bay Village">Bay Village</option>
+              <option value="Beacon Hill">Beacon Hill</option>
+              <option value="Brighton">Brighton</option>
+              <option value="Charlestown">Charlestown</option>
+              <option value="Chinatown">Chinatown</option>
+              <option value="Dorchester">Dorchester</option>
+              <option value="Downtown">Downtown</option>
+              <option value="East Boston">East Boston</option>
+              <option value="Fenway">Fenway</option>
+              <option value="Harbor Islands">Harbor Islands</option>
+              <option value="Hyde Park">Hyde Park</option>
+              <option value="Jamaica Plain">Jamaica Plain</option>
+              <option value="Leather District">Leather District</option>
+              <option value="Longwood Medical Area">Longwood</option>
+              <option value="Mattapan">Mattapan</option>
+              <option value="Mission Hill">Mission Hill</option>
+              <option value="North End">North End</option>
+              <option value="Roslindale">Roslindale</option>
+              <option value="Roxbury">Roxbury</option>
+              <option value="South Boston">South Boston</option>
+              <option value="South Boston Waterfront">South Boston Waterfront</option>
+              <option value="South End">South End</option>
+              <option value="West End">West End</option>
+              <option value="West Roxbury">West Roxbury</option>
+            </select>
+          </div>
+          <div class="filter filter-select">
+            <div id="intent" class="filter-symbol">_</div>
+            <span class="filter-label">Letter of Intent</span>
+          </div>
+          <div class="filter filter-select">
+            <div id="review" class="filter-symbol">_</div>
+            <span class="filter-label">Under Review</span>
+          </div>
+          <div class="filter filter-select">
+            <div id="approved" class="filter-symbol">_</div>
+            <span class="filter-label">Board Approved</span>
+          </div>
+          <div class="filter filter-select">
+            <div id="construction" class="filter-symbol">_</div>
+            <span class="filter-label">Under Construction</span>
+          </div>
+          <div class="filter filter-select">
+            <div id="complete" class="filter-symbol">_</div>
+            <span class="filter-label">Constr. Complete</span>
+          </div>
+        </fieldset>
+      </div>
+      <div id="mapselect">
+        <div>
+          <img class="tab" src="images/mapview_tab.png"/>
+        </div>
+        <div class="maptype" id="maptype_map">
+          <img class="activemaptype" src="images/mapview_map.png"/>
+          <br/>
+          <p class="maptypelabel">Map
+          <br/>
+          View</p>
+        </div>
+        <div class="maptype" id="maptype_sat">
+          <img src="images/mapview_sat.png"/>
+          <br/>
+          <p class="maptypelabel">Satellite
+          <br/>
+          View</p>
+        </div>
+        <div class="maptype" id="maptype_past">
+          <img src="images/mapview_past.png"/>
+          <br/>
+          <p class="maptypelabel">Historic
+          <br/>
+          View</p>
+        </div>
+      </div>
+      <div class="map_overlay_right" unselectable="on">
+        <img id="mapviewtab" src="images/mapview_tab.png"/>
+        <div class="zoomtool shadowed">
+          <img class="zoombtn zoomin" src="images/zoomplus.png" title="Zoom In" alt="Zoom In"/>
+          <div id="zoomslide">
+          </div>
+          <img class="zoombtn zoomout" src="images/zoomminus.png" title="Zoom Out" alt="Zoom Out"/>
+        </div>
+      </div>
+      <noscript>Please enable JavaScript to view this interactive map</noscript>
+    </div>
+        
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/leaflet.js"></script>
+    <script type="text/javascript" src="scripts/L.Control.Zoomslider.js"></script>
+    
+    <!-- Using Esri MapServer or FeatureServer? See http://esri.github.io/esri-leaflet/ and uncomment the script below -->
+    <!--
+    <script type="text/javascript" src="scripts/esri-leaflet.min.js"></script>
+    -->
+    
+    <!-- Using Massachusetts State Plane or another non-WGS84 projection? See https://github.com/proj4js/proj4js#using and uncomment the script below -->
+    <!--
+    <script type="text/javascript" src="scripts/proj4.js"></script>
+    -->
+    
+    <!-- Using WKT format like this? POLYGON (( X1 Y1, X2 Y2, X3 Y3 )) See http://arthur-e.github.io/Wicket/ and uncomment the script below -->
+    <!--
+    <script type="text/javascript" src="scripts/wicket.js"></script>
+    <script type="text/javascript" src="scripts/wicket-leaflet.js"></script>
+    -->
+    
+    <!-- Using TopoJSON? See https://github.com/mbostock/topojson/wiki/API-Reference#client-api and use the script below ( already used to render neighborhoods and city limits ) -->
+    <script type="text/javascript" src="scripts/topojson.v1.min.js"></script>
+
+    <script type="text/javascript" src="scripts/bra-map-template.js"></script>
+  </body>
+</html>
