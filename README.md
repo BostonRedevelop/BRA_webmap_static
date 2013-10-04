@@ -16,29 +16,29 @@
 
 ***Address Box*** is a search box. It queries Boston's parcel database on an ArcGIS Server / MapServer.
 
-<img src="screenshots/addressbox.png"/>
+<img src="https://raw.github.com/mapmeld/BRA_webmap_static/gh-pages/screenshots/addressbox.png"/>
 
 ***View Box*** is a layer control. It can switch between multiple layers with an icon and label
 
-<img src="screenshots/viewbox.png"/>
+<img src="https://raw.github.com/mapmeld/BRA_webmap_static/gh-pages/screenshots/viewbox.png"/>
 
 ***Filter Box*** is a category control. It can filter development projects by neighborhood and by project status. These filters change neighborhood clusters at lower zooms and actual map markers at higher zooms.
 
-<img src="screenshots/filterbox.png"/>
+<img src="https://raw.github.com/mapmeld/BRA_webmap_static/gh-pages/screenshots/filterbox.png"/>
 
 ***Map View Drawer*** is a basemap selector. Click to reveal any number of layers, click a layer to change the basemap, and click again to hide the selector.
 
-<img src="screenshots/mapview.png"/>
+<img src="https://raw.github.com/mapmeld/BRA_webmap_static/gh-pages/screenshots/mapview.png"/>
 
 ***Zoom Slider*** is a custom-styled zoom control based on <a href="https://github.com/kartena/Leaflet.zoomslider">Kartena's ZoomSlider</a>.
 
-<img src="screenshots/zoomslider.png"/>
+<img src="https://raw.github.com/mapmeld/BRA_webmap_static/gh-pages/screenshots/zoomslider.png"/>
 
 ## Map Layers
 
-* <a href="static/citylimit.topojson">citylimit.topojson</a> is the boundary of the City of Boston
+* <a href="https://github.com/mapmeld/BRA_webmap_static/blob/gh-pages/data/citylimit.topojson">citylimit.topojson</a> is the boundary of the City of Boston
 
-* <a href="static/neighborhoods.topojson">neighborhoods.topojson</a> is an unofficial set of neighborhood boundaries within the City of Boston
+* <a href="https://github.com/mapmeld/BRA_webmap_static/blob/gh-pages/data/neighborhoods.topojson">neighborhoods.topojson</a> is an unofficial set of neighborhood boundaries within the City of Boston
 
 ## Additional Tweaks
 
