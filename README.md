@@ -22,7 +22,7 @@
 
 <img src="https://raw.github.com/mapmeld/BRA_webmap_static/gh-pages/screenshots/viewbox.png"/>
 
-***Filter Box*** is a category control. It can filter development projects by neighborhood and by project status. These filters change neighborhood clusters at lower zooms and actual map markers at higher zooms.
+***Filter Box*** is a category control. It can filter down the features shown from the View Box's selected layer.
 
 <img src="https://raw.github.com/mapmeld/BRA_webmap_static/gh-pages/screenshots/filterbox.png"/>
 
