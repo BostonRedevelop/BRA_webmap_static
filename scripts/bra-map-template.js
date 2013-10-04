@@ -135,7 +135,7 @@ $.getJSON(staticDirectory + "neighborhoods.topojson", function(tj){
       label.on('click', function(e){
         layer.fireEvent('click', e);
       });
-      neighborhoods.push({ layer: layer });
+      neighborhoods.push({ layer: layer, properties: feature.properties });
       map.addLayer(layer);
     }
   });
